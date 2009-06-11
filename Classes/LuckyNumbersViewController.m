@@ -7,7 +7,7 @@
 //
 
 #import "LuckyNumbersViewController.h"
-#import <JSON/JSON.h>
+#import "JSON/JSON.h"
 
 @implementation LuckyNumbersViewController
 
@@ -32,7 +32,8 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {		
-
+	[connection release];
+	
 	NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	[responseData release];
 	
